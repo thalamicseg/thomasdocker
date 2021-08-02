@@ -5,9 +5,9 @@ The THOMAS workflow is shown below-
 ![THOMAS workflow](THOMAS.jpg "Workflow")
 
 ## Installation instructions
-- Download the files using ```git clone https://github.com/thalamicseg/thomasdocker.git``` 
+- Download the files using ```git clone https://github.com/thalamicseg/thomasdocker.git``` which will create a thomasdocker directory
 
-- Make sure docker is installed already on your machine. Then run ```docker build -t thomas .``` to create a container named thomas. Note the period at the end of the command which is critical.
+- Make sure docker is installed already on your machine. Then run ```docker build -t thomas .``` inside the thomasdocker directory to create a container named thomas. Note the period at the end of the command which is critical.
 
 - The container is 41Gb so make sure the disk/partition you are installing it in has enough space. During buildtime, it might need more for temporary files so use 100G to be safe. The required programs for THOMAS including ANTs (2.3.4), FSL (5.0), c3d and THOMAS pulled from github will be downloaded which are long. So please be patient !
 
@@ -25,3 +25,7 @@ The THOMAS workflow is shown below-
 - Use the thomas_csh_mv wrapper provided for standard MPRAGE or T1 (FSPGR or BRAVO in older GE) data
 
   Usage: ```thomas_csh_mv MPRAGEorT1_file <ro/lo>``` 
+  
+## Docker usage
+- There are multiple ways to use the container. You can launch a container and mount the folder with your data inside the container and then run it manually or a script inside the container. You can also directly run it from the command line by launching the container with a bash command.
+- Method 1. Launch the container using ```docker run -v ${PWD}:${PWD} -w ${PWD} --user $(id -u):$(id -g) --rm -it thomas ```
