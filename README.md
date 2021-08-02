@@ -7,11 +7,11 @@ The THOMAS workflow is shown below-
 ## Installation instructions
 - Download the files using ```git clone ``` 
 
-- Make sure docker is installed already on your machine. Then run ```docker build -t thomas . ``` to create a container named, umm, thomas !
+- Make sure docker is installed already on your machine. Then run ```docker build -t thomas .``` to create a container named thomas. Note the period at the end of the command which is critical.
 
-- Note the container is 41Gb so make sure the partition you are installing it in has enough space. During buildtime, it might need more for temporary files so use 100G to be safe. The required programs for THOMAS including ANTs (2.3.4), FSL (5.0), c3d and THOMAS pulled from github will be downloaded which are long. So please be patient !
+- The container is 41Gb so make sure the disk/partition you are installing it in has enough space. During buildtime, it might need more for temporary files so use 100G to be safe. The required programs for THOMAS including ANTs (2.3.4), FSL (5.0), c3d and THOMAS pulled from github will be downloaded which are long. So please be patient !
 
-- Finally type ```docker images ``` to see thomas listed as a repository. Then you are good to go. 
+- When the build finishes, type ```docker images ``` to see thomas listed as a repository. You are good to go !
 
 ## Script usage
 - THOMAS is installed in the container in /opt/thomas_new and comes with three wrapper scripts.
