@@ -4,17 +4,17 @@ The THOMAS workflow is shown below-
 
 ![THOMAS workflow](THOMAS.jpg "Workflow")
 
-## Installation
-Download the files using ```git clone ``` 
+## Installation instructions
+-Download the files using ```git clone ``` 
 
-Make sure docker is installed already on your machine. Then run ```docker build -t thomas . ``` to create a container named, umm, thomas !
+-Make sure docker is installed already on your machine. Then run ```docker build -t thomas . ``` to create a container named, umm, thomas !
 
-Note the container is 41Gb so make sure the partition you are installing it in has enough space. During buildtime, it might need more for temporary files so use 100G to be safe. The required programs for THOMAS including ANTs (2.3.4), FSL (5.0), c3d and THOMAS pulled from github will be downloaded which are long. So please be patient !
+-Note the container is 41Gb so make sure the partition you are installing it in has enough space. During buildtime, it might need more for temporary files so use 100G to be safe. The required programs for THOMAS including ANTs (2.3.4), FSL (5.0), c3d and THOMAS pulled from github will be downloaded which are long. So please be patient !
 
-Finally type ```docker images ``` to see thomas listed as a repository. Then you are good to go. 
+-Finally type ```docker images ``` to see thomas listed as a repository. Then you are good to go. 
 
 ## Script usage
-- THOMAS is in the container in /opt/thomas_new and comes with three wrapper scripts.
+- THOMAS is installed in the container in /opt/thomas_new and comes with three wrapper scripts.
 - Use the thomas_csh wrapper provided for WMn MPRAGE data (or thomas_csh_big for handling large ventricles such as in older subjects)
   
   Usage: ```thomas_csh WMnMPRAGE_file <ro/lo>```  or ```thomas_csh_big WMnMPRAGE_file <ro/lo> ```
