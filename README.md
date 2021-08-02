@@ -13,7 +13,8 @@ Note the container is 41Gb so make sure the partition you are installing it in h
 
 Finally type ```docker images ``` to see thomas listed as a repository. Then you are good to go. 
 
-## Usage
+## Script usage
+- THOMAS is in the container in /opt/thomas_new and comes with three wrapper scripts.
 - Use the thomas_csh wrapper provided for WMn MPRAGE data (or thomas_csh_big for handling large ventricles such as in older subjects)
   
   Usage: ```thomas_csh WMnMPRAGE_file <ro/lo>```  or ```thomas_csh_big WMnMPRAGE_file <ro/lo> ```
