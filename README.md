@@ -5,7 +5,7 @@ The THOMAS workflow is shown below-
 ![THOMAS workflow](THOMAS.jpg "Workflow")
 
 ## Installation instructions
-- Download the files using ```git clone ``` 
+- Download the files using ```git clone https://github.com/thalamicseg/thomasdocker.git``` 
 
 - Make sure docker is installed already on your machine. Then run ```docker build -t thomas .``` to create a container named thomas. Note the period at the end of the command which is critical.
 
