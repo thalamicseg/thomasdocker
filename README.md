@@ -1,6 +1,7 @@
 # THOMAS docker version
 This is a docker container for the thalamic nuclei segmentation method Thalamus Optimized Multi Atlas Segmentation (THOMAS)
-THOMAS workflow is shown below-
+The THOMAS workflow is shown below-
+
 ![THOMAS workflow](THOMAS.jpg "Workflow")
 
 ## Installation
