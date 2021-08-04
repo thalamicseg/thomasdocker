@@ -36,7 +36,7 @@ The THOMAS workflow is shown below-
 - After you run inside the docker, the files created will be owned by root, which can be annoying if you want to delete them and do not have sudo. To avoid this you can, add ```--user $(id -u):$(id -g) ``` to your docker commands to preserve the ownership. This, in some machines, will generate a bizarre prompt due to usernames missing but after it finishes, it will retain your ownership of the files THOMAS creates.
 
 ## Outputs
-The directories named left and right contain the outputs which are individual nuclei labels (e.g. 2-AV.nii.gz for anteroventral and so on), ```thomas.nii.gz``` which is a single file with all labels fused, and ```thomasfull.nii.gz``` which is the same size as the input file (i.e. full size as opposed to thomas which is cropped). In addition, ```nucVols.txt``` contains the nuclei volumes and ```regn.nii.gz``` is the custom template registered to the input image. This file is critical for debugging. Make sure this file and crop_<inputfilename> are well aligned. A color table file called CustomAtlas.ctbl is provided for visualization.
+The directories named left and right contain the outputs which are individual nuclei labels (e.g. 2-AV.nii.gz for anteroventral and so on), ```thomas.nii.gz``` which is a single file with all labels fused, and ```thomasfull.nii.gz``` which is the same size as the input file (i.e. full size as opposed to thomas.nii.gz which is cropped). In addition, ```nucVols.txt``` contains the nuclei volumes and ```regn.nii.gz``` is the custom template registered to the input image. This file is critical for debugging. Make sure this file and crop_<inputfilename> are well aligned. A color table file called CustomAtlas.ctbl is provided for visualization.
 
 ## Thalamic nuclei expansions and label definitions
 THOMAS outputs the mammillothalamic tract (14-MTT) and the eleven delineated nuclei grouped as follows (__Note that 6-VLP is further split into 6_VLPv and 6_VLPd. 6_VLPv is the same as VIM used for targeting in DBS applications__)-
@@ -54,5 +54,5 @@ The neuroimage paper on THOMAS can be found here https://pubmed.ncbi.nlm.nih.gov
 	fast, fully automated segmentation of thalamic nuclei from anatomical MRI. NeuroImage; 194:272-282 (2019)
 
 ## Contact
-Please contact Manoj Saranathan manojsar@email.arizona.edu in case you have any questions or difficulties in installation/running. 
+Please contact Manoj Saranathan manojsar@email.arizona.edu in case you have any questions or difficulties in installation/running or to report bugs/issues. 
 
