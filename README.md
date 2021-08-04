@@ -1,5 +1,5 @@
 # THOMAS docker version
-This is a docker container for the thalamic nuclei segmentation method Thalamus Optimized Multi Atlas Segmentation (THOMAS)
+This is a docker container for Thalamus Optimized Multi Atlas Segmentation (THOMAS), the state of the art multi-atlas thalamic nuclei segmentation method.
 The THOMAS workflow is shown below-
 
 ![THOMAS workflow](THOMAS.jpg "Workflow")
@@ -7,7 +7,7 @@ The THOMAS workflow is shown below-
 ## Installation instructions
 - Download the files using ```git clone https://github.com/thalamicseg/thomasdocker.git``` which will create a thomasdocker directory
 
-- Make sure docker is installed already on your machine. Then run ```docker build -t thomas .``` inside the thomasdocker directory to create a container named thomas. Note the period at the end of the command which is critical.
+- Make sure docker is installed already on your machine or install it from here https://docs.docker.com/get-docker/. Then run ```docker build -t thomas .``` inside the thomasdocker directory to create a container named thomas. Note the period at the end of the command which is critical.
 
 - The container is 41Gb so make sure the disk/partition you are installing it in has enough space. During buildtime, it might need more for temporary files so use 100G to be safe. The required programs for THOMAS including ANTs (2.3.4), FSL (5.0), c3d and THOMAS pulled from github will be downloaded which are long. So please be patient !
 
