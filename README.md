@@ -16,14 +16,14 @@ The THOMAS workflow is shown below-
 
 ## Script usage
 - THOMAS is installed in the container in /opt/thomas_new and comes with three wrapper scripts.
-- Use the ```thomas_csh``` wrapper provided for WMn MPRAGE data (or ```thomas_csh_big``` for handling large ventricles such as in older subjects)
+- White matter nulled MPRAGE: Use the ```thomas_csh``` wrapper provided for WMn MPRAGE data (or ```thomas_csh_big``` for handling large ventricles such as in older subjects)
   
   Usage: ```thomas_csh WMnMPRAGEfile <ro/lo>```  or ```thomas_csh_big WMnMPRAGEfile <ro/lo> ```
 
   **Note 1**: the first argument is the white matter nulled MPRAGE file in NIFTy nii.gz format. Make sure it is just the file name and not a full path (e.g. wmn.nii.gz not ~foo/data/case1/wmn.nii.gz. Basically, run the script in the directory where the file is located. If you have each subject in a directory, go to each directory and call the thomas_csh script, usually from a simple csh or bash script
   
   **Note 2**: the second argument, if set to ro/lo, would only segment the right/left side (if missing, it defaults to both left and right)
-- Use the ```thomas_csh_mv``` wrapper provided for standard MPRAGE or T1 (FSPGR or BRAVO in older GE) data
+- Standard T1 or MPRAGE: Use the ```thomas_csh_mv``` wrapper provided for standard MPRAGE or T1 (FSPGR or BRAVO in older GE) data
 
   Usage: ```thomas_csh_mv MPRAGE/T1file <ro/lo>``` 
   
