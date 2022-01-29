@@ -4,11 +4,18 @@ The THOMAS workflow is shown below:-
 
 ![THOMAS workflow](THOMAS.jpg "Workflow")
 
-## Installation instructions
-- Download the files using ```git clone https://github.com/thalamicseg/thomasdocker.git``` which will create a thomasdocker directory
+## Requirements
 
-- Make sure docker is installed already on your machine or install it from here https://docs.docker.com/get-docker/.  
-- Run ```docker build -t thomas .``` inside the thomasdocker directory after the download in step 1 to create a container named thomas. Note the period at the end of the command which is critical.
+- Make sure docker is installed already on your machine or install it from here https://docs.docker.com/get-docker/. 
+- Make sure the disk/partition you are installing it in has a minimun of 50Gb available
+
+## Installation instructions
+
+- Download the files using `git clone https://github.com/thalamicseg/thomasdocker.git` which will create a thomasdocker directory
+
+- Get into the thomas folder `cd thomasdocker`
+
+- Run `docker build -t thomas .` inside the thomasdocker directory after the download in step 1 to create a container named thomas. Note the period at the end of the command which is critical.
 
 - The container is 41Gb so make sure the disk/partition you are installing it in has enough space. During buildtime, it might need more for temporary files so use 100G to be safe. The required dependencies i.e. ANTs (2.3.4), FSL (5.0), c3d, and THOMAS code from github will be all downloaded which will take time. So please be patient !
 
