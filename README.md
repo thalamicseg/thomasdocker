@@ -24,11 +24,14 @@ The THOMAS workflow is shown below:-
     - thomas_csh_big is also for WMn MPRAGE/FGATIR data but used for older patients with enlarged ventricles (larger crop)
 - Note: If you are running on a Linux host, output will be owned by root unless you add ```--user $(id -u):$(id -g) ``` to your docker commands to preserve the ownership. This, in some machines, will generate a bizarre prompt due to usernames missing but after it finishes, it will retain your ownership of the files THOMAS creates.
 - Advanced users can also launch just the container using ```docker run -v <yourdatadir>:<yourdatadir> -w <yourdatadir>  --rm -it thomas ``` and then run the thomas_csh or thomas_csh_mv on the desired files inside the container. This allows some flexibility in manipulating things inside the container.
+- **Updated Jun 1 2022** Two wrapper bash scripts thomas and thomast1 are now available which does everything including the ownership stuff (see usage below). You should put them in ~/bin (and add ~/bin to your path to easily access it from anywhere or call ~/bin/thomas or ~/bin/thomast1)
 
 ## Running the provided test data 
 -  First extract the test data by running ```tar -xvzf example.tgz``` inside the **thomasdocker** directory
--  For the WMn MPRAGE data provided inside thomasdocker, you can run ```docker run -v ${PWD}:${PWD} -w ${PWD} --rm -t thomas bash -c "thomas_csh WMn.nii.gz" ``` 
--  For the T1 MPRAGE data provided inside thonmasdocker, you can run ```docker run -v ${PWD}:${PWD} -w ${PWD} --rm -t thomas bash -c "thomas_csh_mv T1.nii.gz" ```
+-  If using wrapper scripts, move thomas and thomast1 from inside thomasdocker to ~/bin
+-  For the WMn MPRAGE data in thomasdocker, you can run ```docker run -v ${PWD}:${PWD} -w ${PWD} --user $(id -u):$(id -g) --rm -t thomas bash -c "thomas_csh WMn.nii.gz" ```  or ```~/bin/thomas WMn.nii.gz``` 
+-  For the T1 MPRAGE data in thomasdocker, you can run ```docker run -v ${PWD}:${PWD} -w ${PWD} --user $(id -u):$(id -g) --rm -t thomas bash -c "thomas_csh_mv T1.nii.gz" ``` or ```~/bin/thomast1 T1.nii.gz```
+-  Note: you need to create separate subdirectories ideally outside thomasdocker to run WMn and T1 test data or they will get overwritten
 
 ## Outputs
 The directories named **left** and **right** contain the outputs which are individual nuclei labels (e.g. 2-AV.nii.gz for anteroventral and so on), nonlinear warp files, and also the following files:
