@@ -1,0 +1,11 @@
+#!/bin/bash
+#Wrapper for running docker THOMAS thomas_csh script for WMnMPRAGE/FGATIR 
+if [ $# == 1 ]
+then
+echo "running thomas docker on $1"
+docker run -v ${PWD}:${PWD} -w ${PWD} --user $(id -u):$(id -g) --rm -t thomas bash -c "thomas_csh $1"
+else
+echo "Usage: thomas WMnMPRAGE/FGATIR file name"
+echo "please use thomast1 for standard MPRAGE/T1 files"
+fi
+

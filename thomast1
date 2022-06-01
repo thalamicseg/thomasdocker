@@ -1,0 +1,10 @@
+#!/bin/bash
+#Wrapper for running docker THOMAS thomas_csh_mv script for T1
+if [ $# == 1 ]
+then
+echo "running thomas docker on $1"
+docker run -v ${PWD}:${PWD} -w ${PWD} --user $(id -u):$(id -g) --rm -t thomas bash -c "thomas_csh_mv $1"
+else
+echo "Usage: thomast1 MPRAGE/T1 file name"
+echo "please use thomas for WMn MPRAGE/FGATIR files"
+fi
